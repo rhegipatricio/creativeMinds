@@ -12,9 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    echo 'Hello Laravel';
 });
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('hello', function(){
+	echo 'Hello Again!';
+});
