@@ -20,6 +20,29 @@ Route::get('/', function () {
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('hello', function(){
-	echo 'Hello Again!';
+Route::get('hello/{name}', function($name){
+	echo 'Hello ' . $name;
+});
+
+// CREATE an item
+Route::post('test', function(){
+	echo 'We just created an item';
+});
+
+// Read an item
+Route::get('test', function(){
+	echo '<form action="test" method="POST">';
+	echo '<input type="submit">';
+	echo '<input type="hidden" value="' . csrf_token() . '" name="_token">';
+	echo '</form>';
+});
+
+// Update an item
+Route::put('test', function(){
+	
+});
+
+// Delete an item
+Route::delete('test', function(){
+	
 });
